@@ -46,5 +46,8 @@ void person::freeMemory()
 	this->familyId = NULL;
 }
 
-
+void person::getPccId(char * pccId) const
+{
+	strcpy(pccId, this->id);
+}
 

@@ -12,6 +12,9 @@ class person
 
 		~person();
 
+		void getPccId(char* pccId) const;
+
+
 		friend ostream& operator<<( ostream &output, const person &p ) 
 		{ 
 			output << "ID : " << p.id;

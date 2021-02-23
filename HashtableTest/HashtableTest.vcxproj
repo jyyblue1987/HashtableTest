@@ -69,11 +69,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="hashtable.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="personmgr.cpp" />
     <ClCompile Include="personnel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="hashtable.h" />
     <ClInclude Include="person.h" />
     <ClInclude Include="personmgr.h" />
   </ItemGroup>
