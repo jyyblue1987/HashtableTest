@@ -1,29 +1,35 @@
 #ifndef PERSON_H
 #define PERSON_H
 #include <iostream>
-#include <cstring>
-#include <cctype>
-#include <cstdlib>
+
+using namespace std;
 
 class person
 {
     public:
-        // int data;
-        // node * previous;
-        // node * next;
+		person(const char *id, const char *fname, const char *lname, const char *familyid);
+		person(const person &p1);
+
+		~person();
+
+		friend ostream& operator<<( ostream &output, const person &p ) 
+		{ 
+			output << "ID : " << p.id;
+			return output;            
+		}
 
     private:
+		char *id;
+		char *fname;
+		char *lname;
+		char *familyId;
 
+		void allocMemory();
+		void freeMemory();
 };
 
-/* These functions are already written and can be called to test out your code */
-// void build (node * & head);  //supplied
-// void display (node * head);  //supplied
-// void destroy (node * &head); //supplied
 
-// /* *****************YOUR TURN! ******************************** */
-// /* place your prototype here */
-// void printNth (node * head, int n);
-// void insertAtN (node *& head, int n, int value);
+
+
 
 #endif

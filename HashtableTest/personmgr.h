@@ -1,16 +1,17 @@
 #ifndef PERSONMGR_H
 #define PERSONMGR_H
 #include <iostream>
-#include <cstring>
-#include <cctype>
-#include <cstdlib>
+#include "person.h"
 
 class personmgr
 {
     public:
-        // int data;
-        // node * previous;
-        // node * next;
+		personmgr();
+		~personmgr();
+
+        void printHtStats();
+		void addPerson(person p);
+		person* findPerson(char *id);
 
     private:
 

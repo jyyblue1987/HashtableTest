@@ -61,8 +61,7 @@ int main(int argc,char** argv)
         const int NUM_PRINTS = 10;
         const int NUM_LOOKUPS = 100;
 
-        cout << "Showing the first " << NUM_PRINTS << " records." << endl << end
-l;
+        cout << "Showing the first " << NUM_PRINTS << " records." << endl << endl;
 
         int lookupCount = 0;
         while (!infile.eof() )
@@ -81,6 +80,7 @@ l;
                     if (i == 0 && lookupCount < NUM_PRINTS)
                     {
                         cout << *perPtr << endl;
+						//perPtr->print();
                     }
                 }
             }
