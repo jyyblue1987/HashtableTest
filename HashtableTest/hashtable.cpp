@@ -139,10 +139,10 @@ bool hashTable::remove (char const * const key)
 	//search for the data to be removed in the chain (linked list)
 	node * curr = table[index];
 	node * prev = NULL;
-	char id[100];
+	
 	while (curr)
 	{
-		curr->item.getPccId (id);
+		char *id = curr->item.id;
 		if(strcmp(key, id) == 0)
 		{
 			//find match and remove the node
@@ -172,10 +172,10 @@ person* hashTable::retrieve (char const * const key)
 
 	//search for the data in the chain (linked list)
 	node * curr = table[index];
-	char id[100];
+	
 	while (curr)
 	{
-		curr->item.getPccId (id);
+		char *id = curr->item.id;
 		if(strcmp(key, id) == 0)
 		{
 			//find match and return the data
