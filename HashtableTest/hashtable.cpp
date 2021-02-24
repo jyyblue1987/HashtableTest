@@ -210,21 +210,33 @@ int hashTable::getSize (void) const
 	return size;
 }
 
-size_t hashTable::calculateIndex (char const * const key)const
-{
-	// something is very wrong with this hash function -- what?
-	size_t length = strlen(key);
-	size_t hashValue = 0;
+#define A 54059 /* a prime */
+#define B 76963 /* another prime */
+#define C 86969 /* yet another prime */
+#define FIRSTH 37 /* also prime */
 
-	for(size_t i=0; i<length; i++)
-		hashValue += key[i];
-	return hashValue % capacity;
+size_t hashTable::calculateIndex (const char * key)const
+{
+	//// something is very wrong with this hash function -- what?
+	//size_t length = strlen(key);
+	//size_t hashValue = 0;
+
+	//for(size_t i=0; i<length; i++)
+	//	hashValue += key[i];
+	//return hashValue % capacity;
+
+	unsigned h = FIRSTH;
+	while (*key) {
+		h = (h * A) ^ (key[0] * B);
+		key++;
+	}
+	return h % capacity; // or return h % C;
 }
 
 bool hashTable::isEmpty()
 {
 	int i = 0;
-	for(i = 0; i < DEFAULT_CAPACITY; i++ )
+	for(i = 0; i < capacity; i++ )
 	{
 		if( table[i] != NULL )
 			return false;
