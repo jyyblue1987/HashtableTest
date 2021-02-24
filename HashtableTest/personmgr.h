@@ -2,6 +2,7 @@
 #define PERSONMGR_H
 #include <iostream>
 #include "person.h"
+#include "hashtable.h"
 
 class personmgr
 {
@@ -14,7 +15,7 @@ class personmgr
 		person* findPerson(char *id);
 
     private:
-
+		hashTable *persons;
 };
 
 /* These functions are already written and can be called to test out your code */

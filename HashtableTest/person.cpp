@@ -1,5 +1,10 @@
 #include "person.h"
 
+person::person() 
+{
+	allocMemory();
+}
+
 person::person(const char *id, const char *fname, const char *lname, const char *familyid)
 {
 	allocMemory();

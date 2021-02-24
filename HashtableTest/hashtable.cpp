@@ -165,7 +165,7 @@ bool hashTable::remove (char const * const key)
 	return false;
 }
 
-bool hashTable::retrieve (char const * const key, person & aData)const
+person* hashTable::retrieve (char const * const key) 
 {
 	//calculate the retrieval position (the index of the array)
 	size_t index = calculateIndex(key);
@@ -179,15 +179,14 @@ bool hashTable::retrieve (char const * const key, person & aData)const
 		if(strcmp(key, id) == 0)
 		{
 			//find match and return the data
-			aData = curr->item;
-			return true;
+			return &curr->item;			
 		}
 		else
 			curr = curr->next;
 	}
 
 	//data is not in the table
-	return false;
+	return NULL;
 }
 
 ostream& operator<<(ostream& out, hashTable& ht)

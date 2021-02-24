@@ -14,20 +14,23 @@ public:
 
 	void insert(char const * const key, const person& aData);
 	bool remove(char const * const key);
-	bool retrieve(char const * const key, person& aData)const;
+	person* retrieve(char const * const key);
 	int getSize(void)const;
 
 	friend ostream& operator<<(ostream& out, hashTable& ht);
 
-private:
 	struct node
 	{
 		person item;
 		node * next;
 		node(const person& aData) : item(aData), next(NULL) {}
 	};
+
+
+
 	node ** table;
 	int capacity;
+private:
 	int size;
 	const static int DEFAULT_CAPACITY = 9973;
 

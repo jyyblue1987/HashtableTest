@@ -7,6 +7,7 @@ using namespace std;
 class person
 {
     public:
+		person();
 		person(const char *id, const char *fname, const char *lname, const char *familyid);
 		person(const person &p1);
 
@@ -21,8 +22,10 @@ class person
 			return output;            
 		}
 
-    private:
 		char *id;
+
+
+    private:
 		char *fname;
 		char *lname;
 		char *familyId;
