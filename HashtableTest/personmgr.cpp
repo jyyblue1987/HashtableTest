@@ -18,20 +18,16 @@ void personmgr::addPerson(person p)
 
 person* personmgr::findPerson(char *id)
 {		
-	return persons->retrieve(id);	
+	return persons->lookup(id);	
 }
 
 void personmgr::printHtStats()
 {
 	int i;
-	hashTable::node * curr;
-
 	int use_count = 0;
 	for(i=0; i < persons->capacity; i++)
 	{
-		for(curr = persons->table[i]; curr; curr = curr->next)		
-			//we can use << on data object because we overload << in the data class
-			// cout << '\t' << curr->item << endl;
+		if( persons->table[i] != NULL )
 			use_count++;
 	}
 

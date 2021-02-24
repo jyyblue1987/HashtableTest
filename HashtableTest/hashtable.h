@@ -14,8 +14,9 @@ public:
 
 	void insert(char const * const key, const person& aData);
 	bool remove(char const * const key);
-	person* retrieve(char const * const key);
+	person* lookup(char const * const key);
 	int getSize(void)const;
+	bool isEmpty();
 
 	friend ostream& operator<<(ostream& out, hashTable& ht);
 

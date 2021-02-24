@@ -165,7 +165,7 @@ bool hashTable::remove (char const * const key)
 	return false;
 }
 
-person* hashTable::retrieve (char const * const key) 
+person* hashTable::lookup (char const * const key) 
 {
 	//calculate the retrieval position (the index of the array)
 	size_t index = calculateIndex(key);
@@ -219,6 +219,18 @@ size_t hashTable::calculateIndex (char const * const key)const
 	for(size_t i=0; i<length; i++)
 		hashValue += key[i];
 	return hashValue % capacity;
+}
+
+bool hashTable::isEmpty()
+{
+	int i = 0;
+	for(i = 0; i < DEFAULT_CAPACITY; i++ )
+	{
+		if( table[i] != NULL )
+			return false;
+	}
+
+	return true;
 }
 
 
