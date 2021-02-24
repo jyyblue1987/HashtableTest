@@ -26,12 +26,15 @@ void personmgr::printHtStats()
 	int i;
 	hashTable::node * curr;
 
-	cout << "Data in the table: " << endl << endl;
+	int use_count = 0;
 	for(i=0; i < persons->capacity; i++)
 	{
 		for(curr = persons->table[i]; curr; curr = curr->next)		
 			//we can use << on data object because we overload << in the data class
-			cout << '\t' << curr->item << endl;
+			// cout << '\t' << curr->item << endl;
+			use_count++;
 	}
+
+	cout << "Table uses " << use_count << " out of " << persons->capacity << " entries.";
 
 }

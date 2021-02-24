@@ -18,7 +18,9 @@ class person
 
 		friend ostream& operator<<( ostream &output, const person &p ) 
 		{ 
-			output << "ID : " << p.id;
+			output << "ID : " << p.id << endl;
+			output << "First Name : " << p.fname << endl;
+			output << "Last Name : " << p.lname << endl << endl;
 			return output;            
 		}
 
