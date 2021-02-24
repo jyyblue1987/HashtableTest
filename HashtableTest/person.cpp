@@ -21,7 +21,7 @@ person::~person() {
 
 person::person(const person &p1) 
 {
-	freeMemory();
+	// freeMemory();
 	allocMemory();
 
 	strcpy(this->id, p1.id);
